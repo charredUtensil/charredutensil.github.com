@@ -1,0 +1,3 @@
+#!/bin/bash
+#cat game.css.scss | sass --scss > game.css
+erb index.html.erb > index.html

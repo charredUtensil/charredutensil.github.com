@@ -13,6 +13,13 @@ html, body {
   background-color: #2A4764;
   margin: 0; }
 
+body.tinybrowser {
+  zoom: 0.667; }
+  body.tinybrowser #game {
+    margin: 0 auto; }
+    body.tinybrowser #game #scores #word {
+      width: 210px; }
+
 h1 {
   margin: 10px auto; }
 
@@ -54,6 +61,7 @@ h1 {
       z-index: 1; }
     #game .grey_div.selected, #game .grey_div.killm8 {
       color: #C0DBE6;
+      background-color: #75737E;
       background-image: linear-gradient(bottom, #75737e, #272727);
       background-image: -o-linear-gradient(bottom, #75737e, #272727);
       background-image: -ms-linear-gradient(bottom, #75737e, #272727);

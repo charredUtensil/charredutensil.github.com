@@ -7,19 +7,30 @@ html, body {
   top: 0px;
   width: 100%;
   height: 100%;
-  font-family: Quicksand;
+  font-family: Quicksand, sans-serif;
   font-size:32px;
   text-align: center;
   color: #E7E7E7;
   background-color: #2A4764;
+  margin: 0;
+}
+
+body.tinybrowser {
+  zoom:0.667;
+  #game {
+    margin:0 auto;
+    #scores #word {
+      width: 210px;
+    }
+  }
 }
 
 h1 {
-  margin: 10px 0 20px;
+  margin: 10px auto;
 }
 
 #game {
-  margin:auto;
+  margin:20px auto;
   .grey_div, #history div {
     position:relative;
     height:48px;
@@ -37,8 +48,11 @@ h1 {
     cursor: pointer;
     color: #1F2022;
     background-color: #E7E7E7;
-    background: -moz-gradient(linear, left top, left bottom, from(#E7E7E7), to(#C9C9C9));
-    background: -webkit-gradient(linear, left top, left bottom, from(#E7E7E7), to(#C9C9C9));
+    background-image: linear-gradient(bottom, #E7E7E7, #C9C9C9);
+    background-image: -o-linear-gradient(bottom, #E7E7E7, #C9C9C9);
+    background-image: -ms-linear-gradient(bottom, #E7E7E7, #C9C9C9);
+    background-image: -moz-linear-gradient(bottom, #E7E7E7, #C9C9C9);
+    background-image: -webkit-linear-gradient(bottom, #E7E7E7, #C9C9C9);
     border: 3px #5D637C solid;
     border-radius: 10px;
     -o-border-radius: 10px;
@@ -57,8 +71,12 @@ h1 {
     }
     &.selected, &.killm8 {
       color: #C0DBE6;
-      background: -moz-gradient(linear, left top, left bottom, from(#75737E), to(#272727));
-      background: -webkit-gradient(linear, left top, left bottom, from(#75737E), to(#272727));
+      background-color: #75737E;
+      background-image: linear-gradient(bottom, #75737E, #272727);
+      background-image: -o-linear-gradient(bottom, #75737E, #272727);
+      background-image: -ms-linear-gradient(bottom, #75737E, #272727);
+      background-image: -moz-linear-gradient(bottom, #75737E, #272727);
+      background-image: -webkit-linear-gradient(bottom, #75737E, #272727);
     }
     &.error {
       border-color: #D30505;
@@ -89,7 +107,7 @@ h1 {
     height:54px;
     #word {
       margin:0 auto;
-      width:324px;
+      width:318px;
     }
     .counter {
       position:absolute;

@@ -6,9 +6,6 @@ function letterScore(letter) {
   return [1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10][letter.charCodeAt(0)-65];
 }
 
-$wordList = ''
-$.get('words',function(data){$wordList = data;});
-
 $tileSize = 54;
 
 // store info about game
@@ -20,10 +17,25 @@ $wordCount = 0;
 $word = '';
 $highWord = '';
 
-// Hide all the things
 function initGame() {
-  resetBoard(14,8);
-  $('#play_area').delegate('.tile','click',tileClick);
+  // Use space efficiently on small screens
+  var screen;
+  screen = [$('body').width(),$('body').height()];
+  if (screen[0] < 8*$tileSize || screen[1] < 6*$tileSize) {
+    $('body').addClass('tinybrowser');
+    screen = [$('body').width(),$('body').height()];
+  }
+  var width = Math.floor(screen[0]/$tileSize);
+  if (width > 14) width = 14;
+  if (width < 6) width = 6;
+  var height = Math.floor(screen[1]/$tileSize)-2;
+  if (height > 8) height = 8;
+  if (height < 4) height = 4;
+  if ($('h1').outerHeight(true)+(height+2)*$tileSize > screen[1]) {
+    $('h1').hide();
+  }
+  resetBoard(width,height);
+  //$('#play_area').delegate('.tile','click',tileClick);
   $('#word').click(submitWord);
   $('#game').fadeIn(2000);
   setInterval(updateTimer,1000);
@@ -186,7 +198,7 @@ function randomTile() {
   <span class="score">' + letterScore(letter) + '</span>\
 </div>');
   elem.data('letter', letter);
-  //elem.click(tileClick);
+  elem.click(tileClick);
   return elem;
 }
 

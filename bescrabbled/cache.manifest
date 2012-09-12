@@ -1,0 +1,12 @@
+CACHE MANIFEST
+
+# md5 db9f34258638198cde69fa196904e84b  -
+
+NETWORK:
+*
+
+CACHE:
+index.html
+game.css
+game.js
+words.js

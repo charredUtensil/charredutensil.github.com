@@ -1,0 +1,13 @@
+CACHE MANIFEST
+<% FILES = %w{
+  index.html
+  game.css
+  game.js
+  words.js
+} %>
+# md5 <%= `md5sum #{FILES.join(' ')} | md5sum` %>
+NETWORK:
+*
+
+CACHE:
+<%= FILES.join("\n") %>

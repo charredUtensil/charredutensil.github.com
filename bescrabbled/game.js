@@ -9,6 +9,7 @@ function letterScore(letter) {
 $tileSize = 54;
 
 // store info about game
+$tinybrowser = false;
 $score = 0;
 $timer = 0;
 $wordScore = 0;
@@ -22,7 +23,11 @@ function initGame() {
   var screen;
   screen = [$('body').width(),$('body').height()];
   if (screen[0] < 8*$tileSize || screen[1] < 6*$tileSize) {
+    // Really tiny screens like the 3DS
     $('body').addClass('tinybrowser');
+    // Make the game easier for tiny boards
+    $letterBag += "    ";
+    $wordList += " A I";
     screen = [$('body').width(),$('body').height()];
   }
   var width = Math.floor(screen[0]/$tileSize);

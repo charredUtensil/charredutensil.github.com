@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html manifest='cache.manifest'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<title>Scriqqle</title>
+</head>
+<body>
+<!-- High scoring words:
+  LOBOTOMIZED   (264)
+  EXTERMINATED  (252)
+  PTERODACTYL   (209)
+  CHOCOLATEY    (200)
+  -->
+<link rel="stylesheet" type="text/css" href="game.css" />
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script type="text/javascript">
+/* Google Web Font code */
+WebFontConfig = {
+    google: { families: [ 'Quicksand:700:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
+</script>
+<script type="text/javascript" src="words.js"></script>
+<script type="text/javascript" src="game.js"></script>
+<h1>Scriqqle</h1>
+<div id="game" style="display:none;">
+  <div id="play_area"></div>
+  <div id="scores">
+    <div id="score" class="counter">
+      <span class="tooltip">
+        Total
+      </span>
+      <span class="value"></span>
+    </div>
+    <div id="timer" class="counter">
+      <span class="value"></span>
+    </div>
+    <div id="high_score" class="counter">
+      <span class="tooltip">
+        High Score
+      </span>
+      <span class="value"></span>
+    </div>
+    <div id="word_count" class="counter">
+      <span class="value"></span>
+      <span class="tooltip">
+        Words
+      </span>
+    </div>
+    <div id="word" class="grey_div">
+      <span class="text"></span><span class="score"></span>
+    </div>
+  </div>
+  <div id="history"></div>
+</div>
+
+</body></html>

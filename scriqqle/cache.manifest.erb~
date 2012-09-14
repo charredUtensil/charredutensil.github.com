@@ -6,10 +6,12 @@ CACHE MANIFEST
   jquery.min.js
   game.js
   words.js
+  font-offline.js
+  fonts/Quicksand-Bold.ttf
 } %>
 # md5 <%= `md5sum #{FILES.join(' ')} | md5sum` %>
 FALLBACK:
-font.js nothing.js
+font.js font-offline.js
 
 NETWORK:
 *

@@ -1,6 +1,9 @@
 CACHE MANIFEST
 
-# md5 94f9a0347bc41180ac1af6c53a7d64fe  -
+# md5 4ecae6e4700dd2a5bec984284730ba81  -
+
+FALLBACK:
+font.js nothing.js
 
 NETWORK:
 *
@@ -8,5 +11,7 @@ NETWORK:
 CACHE:
 index.html
 game.css
+nothing.js
+jquery.min.js
 game.js
 words.js

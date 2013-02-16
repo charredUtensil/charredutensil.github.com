@@ -8,7 +8,8 @@ booty = [
   "http://a.tumblr.com/tumblr_mia5xn7HFj1r8rjvxo1.mp3", //booty
   "http://a.tumblr.com/tumblr_meetn1vdA21rmvgizo1.mp3", //doctor
   "http://a.tumblr.com/tumblr_mhg4z9l0TX1r1i0muo1.mp3", //doctor2
-  "http://a.tumblr.com/tumblr_mia83hvK791qdqix8o1.mp3"  //dootdoot
+  "http://a.tumblr.com/tumblr_mia83hvK791qdqix8o1.mp3", //dootdoot
+  "http://a.tumblr.com/tumblr_ma1fp93qjX1rvcsi4o1.mp3"  //duck
 ];
 booty = new Audio(booty[Math.floor(Math.random()*booty.length)]);
 //}

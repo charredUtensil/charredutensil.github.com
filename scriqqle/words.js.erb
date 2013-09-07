@@ -1,0 +1,1 @@
+$wordList='<%= File.read('/usr/share/dict/words').each_line.to_a.select{|s| s =~ /^[a-z][a-z]+$/}.map{|s| s.chomp.upcase}.join(' ') %>';

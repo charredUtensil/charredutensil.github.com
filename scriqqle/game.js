@@ -1,5 +1,5 @@
 // letters and the frequency they should show up in
-$letterBag = "AAAAAAAAABBCCDDDDEEEEEEEEEEEEFFGGGHHIIIIIIIIIJKLLLLMMNNNNNNOOOOOOOOPPQRRRRRRSSSSTTTTTTUUUUVVWWXYYZ   ";
+$letterBag = "AAAAAAAAABBCCDDDDEEEEEEEEEEEEFFGGGHHIIIIIIIIIJKLLLLMMNNNNNNOOOOOOOOPPQRRRRRRSSSSTTTTTTUUUUVVWWXYYZ     ";
 
 function letterScore(letter) {
   if (letter == ' ') return 0;
@@ -18,6 +18,8 @@ $wordCount = 0;
 $word = '';
 $highWord = '';
 
+$isTouchDevice = 'ontouchstart' in document.documentElement;
+
 function initGame() {
   // Use space efficiently on small screens
   var screen;
@@ -26,7 +28,7 @@ function initGame() {
     // Really tiny screens like the 3DS
     $('body').addClass('tinybrowser');
     // Make the game easier for tiny boards
-    $letterBag += "    ";
+    $letterBag += "  ";
     $wordList += " A I";
     screen = [$('body').width(),$('body').height()];
   }
@@ -41,7 +43,21 @@ function initGame() {
   }
   resetBoard(width,height);
   //$('#play_area').delegate('.tile','click',tileClick);
-  $('#word').click(submitWord);
+  if ($isTouchDevice) {
+    $('#play_area').on({
+      'touchstart':tileClick
+    },'.tile');
+    $('#word').on({
+      'touchstart':submitWord
+    });
+  } else {
+    $('#play_area').on({
+      'click':tileClick
+    },'.tile');
+    $('#word').on({
+      'click':submitWord
+    });
+  }
   $('#game').fadeIn(2000);
   setInterval(updateTimer,1000);
 }
@@ -100,14 +116,12 @@ function connectedGraph() {
     var n = queue.shift().split(' ');
     var x = parseInt(n[0]);
     var y = parseInt(n[1]);
-    n = unvisited.indexOf((x-1) + ' ' + y);
-    if (n != -1) queue.push(unvisited.splice(n,1)[0]);
-    n = unvisited.indexOf((x+1) + ' ' + y);
-    if (n != -1) queue.push(unvisited.splice(n,1)[0]);
-    n = unvisited.indexOf(x + ' ' + (y-1));
-    if (n != -1) queue.push(unvisited.splice(n,1)[0]);
-    n = unvisited.indexOf(x + ' ' + (y+1));
-    if (n != -1) queue.push(unvisited.splice(n,1)[0]);
+    for (var i=-1;i<=1;i++) {
+      for (var j=-1;j<=1;j++) {
+        n = unvisited.indexOf((x+i) + ' ' + (y+j));
+        if (n != -1) queue.push(unvisited.splice(n,1)[0]);
+      }
+    }
   }
   // Queue is empty. No unvisited nodes means traversed the whole graph
   return unvisited.length == 0;
@@ -126,13 +140,14 @@ function validateWord() {
 }
 
 function submitWord() {
+  $('#word').addClass('selected');
   var valid = true;
   if (!validateWord()) {
     flash($('#word'));
     valid = false;
   }
   if (!connectedGraph()) {
-    flash($('#play_area .selected'));
+    flash($('#play_area .selected.tile'));
     valid = false;
   }
   if (valid) {
@@ -145,7 +160,7 @@ function submitWord() {
     $wordCount += 1;
     updateScore();
     var newTiles = [];
-    $('.selected')
+    $('.selected.tile')
       .removeClass('selected')
       .addClass('killm8')
       .each(function(i,e){
@@ -162,10 +177,11 @@ function submitWord() {
       .animate({'margin-top':0},500)
       .prepend('<div class="item">'+$('#word')[0].innerHTML+'</div>');
   }
-  $('.selected').removeClass('selected');
+  $('.selected.tile').removeClass('selected');
   $word = '';
   $wordScore = 0;
   updateWord();
+  $('#word').removeClass('selected');
 }
 
 function updateWord() {
@@ -203,7 +219,6 @@ function randomTile() {
   <span class="score">' + letterScore(letter) + '</span>\
 </div>');
   elem.data('letter', letter);
-  elem.click(tileClick);
   return elem;
 }
 

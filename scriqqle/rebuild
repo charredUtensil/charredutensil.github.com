@@ -1,4 +1,5 @@
 #!/bin/bash
 cat game.css.scss | sass --scss > game.css
 erb index.html.erb > index.html
+erb words.js.erb > words.js
 erb cache.manifest.erb > cache.manifest

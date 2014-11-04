@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+<!--
+  Of course, I expected someone interested in hiring a
+  programmer to view-source something he wrote.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <!--
+      Inline CSS to keep this as one file for convenience' sake
+    -->
+    <style type="text/css">
+      
+      /* First, some generic definitions*/
+      
+      body {
+        background-color:   #aaa;
+        font-family:        Helvetica, Arial, sans-serif;
+      }
+      
+      * {
+        transition:         all .7s;
+        -ms-transition:     all .7s;
+        -moz-transition:    all .7s;
+        -webkit-transition: all .7s;
+      }
+      
+      h1 {
+        margin:             auto;
+        text-align:         center;
+      }
+      
+      h2 {
+        margin:             .125in 0 0;
+      }
+      
+      p {
+        padding-left:       40px;
+      }
+      
+      ul {
+        margin:             0;
+      }
+      
+      #page {
+        width:              7.5in;
+        height:             10in;
+        /* Some browsers like to add headers + footers,
+        which forces an extra page sometimes, so I've
+        cut off a half inch from the 8.5"x11" standard */
+        margin:             auto;
+        padding:            0.25in 0.5in;
+        background-color:   white;
+        overflow:           hidden;
+        box-shadow: 4px 6px 10px black;
+      }
+      
+      .clear  {clear:both;}
+      .left   {float: left;}
+      .right  {float: right;}
+      
+      .section {
+        border-radius:      7px;
+        -moz-border-radius: 7px;
+        -webkit-border-radius:7px;
+      }
+      
+      .section:hover {
+        color:              #113;
+        background-color:   #eee;
+      }
+      
+      table {
+        width:              100%;
+      }
+      
+      li {
+        padding-bottom:     6pt;
+        clear:              left;
+      }
+      
+      li ul li {
+        padding-bottom:     0px;
+      }
+      
+      .column {width: 48%;}
+      
+      /* CSS to make the popups work */
+      
+      ul.condensed li {
+        display:            block;
+        float:              left;
+        clear:              none;
+        list-style-type:    none;
+        padding-right:      10px;
+      }
+      
+      ul.condensed li .popup,
+      .has_popup .popup {
+        opacity:            0;
+        filter:             alpha(opacity = 0);
+        zoom:               1;
+        position:           absolute;
+        left:               -5in;
+        width:              5in;
+        border:             solid;
+        border-color:       #ccc;
+        border-width:       2px;
+        background-color:   white;
+        padding:            5px;
+        color:              #000;
+        font-size:          normal;
+        font-weight:        bold;
+        z-index:            413;
+        border-radius:      3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius:3px;
+      }
+      
+      .section:hover ul.condensed li,
+      .section:hover .has_popup {
+        color:#00e;
+      }
+      
+      ul.condensed li:hover,
+      .has_popup:hover {
+        color:              #00e;
+      }
+      
+      ul.condensed li:hover .popup,
+      .has_popup:hover .popup {
+        left:               1in;
+        opacity:            1;
+        filter:             alpha(opacity = 100);
+      }
+      
+      /* Contact info div */
+      #contactinfo {width:  100%;}
+      #tel, #email {text-align:right;}
+      
+      /* References div */
+      #references {
+        text-align: center;
+        font-size: smaller;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <!--
+        <joke>
+          Best viewed in Internet Explorer 6
+          <font face="comic sans ms" color="magenta" size="72">
+          <blink>RESUME</blink></font>
+        </joke>
+      -->
+      <h1>RESUME</h1>
+      <div class="section" id="contactinfo">
+        <h2>Christopher J. Dollard</h2>
+        <div class="left" id="address">
+          464 Coolidge Street<br />
+          West Hempstead, NY 11552-2326
+        </div>
+        <div class="right">
+          <div id="tel">
+            <a href="tel:+15164899080">
+              (516)489-9080
+            </a>
+          </div>
+          <div id="email">
+            <a href="mailto:cjd.d01071@gmail.com">
+              cjd.d01071@gmail.com
+            </a>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div><!-- contactinfo -->
+      <div class="left column">
+        <div class="section" id="goals">
+          <h2>Goals</h2>
+          <p>
+            I enjoy finding a good solution
+            to a hard problem, and I love to
+            design and create games. If I can
+            make a living doing either,
+            I'll be happy.
+          </p>
+        </div> <!-- goals -->
+        <div class="section" id="education">
+          <h2>Education</h2>
+          <ul>
+            <li>
+              Chaminade High School, Mineola NY
+              <ul>
+                <li>High School Diploma</li>
+                <li>National Honor Society</li>
+              </ul>
+            </li>
+            <li>
+              Adelphi University, Garden City NY
+              <ul>
+                <li>BS in Computer Science</li>
+                <li>Summa Cum Laude</li>
+                <li>Minor in Mathematics</li>
+                <li>Concentration in Information Security</li>
+                <li>Concentration in Game Design</li>
+                <li>Dean's List 7 of 8 semesters</li>
+                <li>Mary Louise Buchanan Award for Excellence in Computer Science</li>
+              </ul>
+            </li>
+          </ul>
+        </div> <!-- education -->
+        <div class="section" id="projects">
+          <h2>Major Personal Projects</h2>
+          <ul>
+            <li>
+              <a href="http://home.adelphi.edu/~cd17347/publish/superstemkoski/superstemkoski.jar"
+                target="blank">
+                Super Stemkoski
+              </a>
+              is the result of a single semester course in Game Design
+            </li>
+            <li>
+              <a href="http://www.moddb.com/mods/gamma-energy"
+                target="blank">
+                Gamma Energy
+              </a>
+              is a modification of Valve's excellent game, <em>Portal</em>.
+            </li>
+            <li>
+              <a href="http://forums.xkcd.com/viewtopic.php?f=11&t=76349&start=40#p2868684"
+                target="blank">
+                GLOBOL
+              </a>
+              is an esoteric programming language designed to point out the
+              inherent flaws of global variables.
+            </li>
+            <li>
+              <a href="http://charredutensil.github.com/scriqqle/"
+                target="blank">
+                Scriqqle
+              </a>
+              was my first step into HTML5 gaming.
+            </li>
+          </ul>
+        </div> <!-- projects -->
+      </div> <!-- left -->
+      <div class="right column">
+        <div class="section" id="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li>
+              Languages
+              (In rough order of proficiency)
+              <ul class="condensed">
+                <li>
+                  Ruby
+                  <div class="popup">
+                    I've worked on a handful of
+                    Rails apps at a few prior
+                    employers and have written
+                    Ruby code for all kinds of
+                    applications, including one
+                    designed to automate the
+                    scanning of paper forms with
+                    OCR, a simplified admin and
+                    permissions wrapper for
+                    Minecraft servers, a web
+                    crawler for danbooru based
+                    image boards, a puzzle game
+                    inspired by the work of
+                    Charles Babbage, the GLOBOL
+                    server, and countless little
+                    scripts here and there to
+                    automate menial tasks. I can
+                    say without a doubt that it
+                    has become my favorite
+                    programming language.
+                  </div>
+                </li>
+                <li>
+                  Javascript&nbsp;/&nbsp;Coffeescript
+                  <div class="popup">
+                    I have a lot of experience building
+                    dynamic web applications with
+                    Javascript. I have used JQuery, but
+                    by far am the most productive with
+                    Coffeescript and AngularJS.
+                  </div>
+                </li>
+                <li>
+                  HTML&nbsp;/&nbsp;CSS
+                  <div class="popup">
+                    Although not technically a
+                    programming language, I've used
+                    HTML5+CSS3 to put together a
+                    wide variety of websites, including
+                    this one. I prefer to work with SCSS
+                    or LESS over raw stylesheets where
+                    I can.
+                  </div>
+                </li>
+                <li>
+                  Python
+                  <div class="popup">
+                    I picked up Python in a week
+                    and loved it from the start.
+                    I played with it long enough
+                    to write a few cool projects,
+                    including a program to edit
+                    programs for the TI84 on the
+                    PC, and an automated music
+                    generator I nicknamed
+                    Pythoven. Later, I ended up
+                    working on a pair of Django
+                    apps, one of which is a complex
+                    web store, integrating with
+                    a multitude of API to print
+                    and sell custom notebooks.
+                  </div>
+                </li>
+                <li>
+                  Java
+                  <div class="popup">
+                    As Adelphi's language of
+                    choice, I've had my fair share
+                    of experience with it. Some of
+                    my greatest projects were in
+                    Java, including Super Stemkoski
+                    and the GLOBOL interpreter.
+                  </div>
+                </li>
+                <li>
+                  PHP
+                  <div class="popup">
+                    Though it's not my language of
+                    choice for server side scripting,
+                    a few forms or a Wordpress theme
+                    are well within my capability.
+                  </div>
+                </li>
+                <li>
+                  Bash
+                  <div class="popup">
+                    I'm no guru at the command line,
+                    but I know how to automate basic
+                    tasks, find files, and whatever
+                    else needs doing. I am about
+                    as comfortable doing many tasks
+                    with the command line as with
+                    a GUI, and can often complete
+                    tasks faster that way.
+                  </div>
+                </li>
+                <li>
+                  SQL
+                  <div class="popup">
+                    I most often access the database
+                    through some abstraction of SQL
+                    in whatever framework I happen to
+                    be using at the time, but I'm not
+                    above a moderately complex query
+                    when the time comes. I am very
+                    used to generating aggregated
+                    reports from complicated data.
+                  </div>
+                </li>
+                <li>
+                  C#
+                  <div class="popup">
+                    Most of my experience with C#
+                    comes from debugging code written
+                    for the Unity 3D game engine.
+                  </div>
+                </li>
+                <li>
+                  C++
+                  <div class="popup">
+                    I know my way around a pointer.
+                    I've learned how to face the
+                    dreaded monster known only as
+                    "Segmentation Fault," and I
+                    have taken a few steps without
+                    the Garbage Collector cleaning
+                    up after me. I have also used
+                    OpenGL through GLUT to make a
+                    preview utility for Valve Map
+                    Files.
+                  </div>
+                </li>
+                <li>
+                  TI83&nbsp;Basic
+                  <div class="popup">
+                    As the most technologically
+                    advanced piece of equipment I
+                    was allowed to own in high school,
+                    I loved my TI84 graphing calculator.
+                    As I wasn't very good at Tetris,
+                    I spent most of my time with it
+                    writing code. As I would later
+                    write a program to parse the
+                    entire 600 token instruction set
+                    <em>twice</em>, I know this language
+                    all too well.
+                  </div>
+                </li>
+                <li>
+                  Scheme
+                  <div class="popup">
+                    In learning Scheme, I learned
+                    quite a bit about functional
+                    programming. Just about any
+                    single function I can think of
+                    in any other language I can code
+                    in Scheme, but the most complex
+                    project I've ever attempted was
+                    an interpreter for a slightly
+                    different Lisp-like language.
+                  </div>
+                </li>
+                <li>
+                  Haskell
+                  <div class="popup">
+                    The very concept of a language
+                    where it is possible to define
+                    a list of every prime number
+                    and lazily compute finite subsets
+                    of it amuses me to no end. I've
+                    forgotten much of the syntax
+                    over the years, but the
+                    concepts have remained and
+                    tend to find their way into my
+                    daily programming habits where
+                    they are useful.
+                  </div>
+                </li>
+                <li>
+                  Lua
+                  <div class="popup">
+                    Specifically, SWEPs, tools,
+                    and map logic for Garry's Mod,
+                    the Source Engine's most popular
+                    physics sandbox. As I discovered
+                    while reading through endless
+                    tutorials on exactly how to
+                    interface with the game, Lua
+                    isn't terribly different from
+                    Python or Ruby.
+                  </div>
+                </li>
+                <li>
+                  Perl
+                  <div class="popup">
+                    My knowledge of regular
+                    expressions from other
+                    languages came in handy writing
+                    the occasional script.
+                  </div>
+                </li>
+                <li>
+                  Visual&nbsp;Basic
+                  <div class="popup">
+                    VB6 was the first language I
+                    learned, mostly on my own. I
+                    used it to create all kinds of
+                    strange graphical apps, one of
+                    which would become the inspiration
+                    for a later esoteric programming
+                    language, although most of them
+                    ran very slowly as I had yet to
+                    learn about algorithmic efficiency.
+                    It has been a while, but I can
+                    still understand Visual Basic
+                    code, and could certainly write
+                    some more if I ever put a few
+                    hours of effort into it.
+                  </div>
+                </li>
+                <li>
+                  x86&nbsp;Assembler
+                  <div class="popup">
+                    I wouldn't feel comfortable
+                    putting together more than a
+                    few dozen lines together, but
+                    I know enough to understand
+                    what's going on down at the
+                    final layer of abstraction
+                    before the hardware itself.
+                  </div>
+                </li>
+                <li>
+                  Batch
+                  <div class="popup">
+                    I am no fan of Windows' version
+                    of the command line, but I have
+                    used it to some extent. I do
+                    occasionally cobble together
+                    a script.
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Tools and Frameworks
+              <ul class="condensed">
+                <li>
+                  Rails
+                  <div class="popup">
+                    I explained most of this in the section
+                    about Ruby above, but I have worked on a
+                    few Rails apps already. One I created from
+                    scratch myself was a website where students
+                    could upload print jobs to the server,
+                    select any printer on campus, click a
+                    button, be billed the $0.05, then have the
+                    pages appear in the selected printer. At
+                    another employer, I converted a 50KLOC
+                    internal use app from Ruby 1.8/Rails 2 to
+                    Ruby 1.9/Rails 3, in the process stripping
+                    away almost a fifth of the app's code and
+                    noticably decreasing its response time.
+                  </div>
+                </li>
+                <li>
+                  Django
+                  <div class="popup">
+                    I spent a year as the lead developer for 
+                    <a href="http://www.maydesigns.com/"
+                    target="_blank">May Designs</a>. Its vast
+                    backend for e-commerce is written purely
+                    in Django. The site has been featured on
+                    Good Morning America three times under my
+                    care, and was chosen as one of Oprah's Favorite
+                    Things in 2014.
+                  </div>
+                </li>
+                <li>
+                  AngularJS
+                  <div class="popup">
+                    AngularJS is a vast framework that removes
+                    DOM manipulation from the code and separates
+                    the view from the model in an elegant, beautiful
+                    way. I have created several mobile web apps
+                    using this framework, as well as a card decorator
+                    app that lets users design their own custom
+                    greeting cards, with real-time previews and
+                    a wide variety of patterns and templates to
+                    choose from.
+                  </div>
+                </li>
+                <li>
+                  JQuery
+                  <div class="popup">
+                    It's almost become one with Javascript at this
+                    point, but I know how to do Javascript the
+                    "JQuery Way." I've used the JQuery-UI and
+                    JQuery-mobile frameworks as well.
+                  </div>
+                </li>
+                <li>
+                  Hammer
+                  <div class="popup">
+                    I have quite a bit of experience with the
+                    world editing tool included in the Source
+                    SDK since its release in the mid '00s. Among
+                    other things, I used it to create Gamma
+                    Energy, regarded by some as one of the best
+                    Portal mods out there.
+                  </div>
+                </li>
+                <li>
+                  Unity&nbsp;3D&nbsp;Engine
+                  <div class="popup">
+                    I started work on a Unity 3D project fairly
+                    late in its development, but there was
+                    plenty of work to be done. For about two
+                    months, I coded away in C# to find and
+                    destroy bugs, redesigned many of the game's
+                    then hastily designed levels, and worked to
+                    adjust the game for its secondary deployment
+                    on the iPad and iPhone.
+                  </div>
+                </li>
+                <li>
+                  NodeJS
+                  <div class="popup">
+                    I have some experience writing web backends
+                    in NodeJS, using Express and web sockets.
+                  </div>
+                </li>
+                <li>
+                  Wordpress
+                  <div class="popup">
+                    I have a bit of experience working with a
+                    small number of Wordpress sites.
+                  </div>
+                </li>
+                <li>
+                  Cordova
+                  <div class="popup">
+                    Also known as PhoneGap, I have used this to
+                    integrate native Android and iOS code with
+                    HTML5 apps.
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>Familiar with SVN, Git, and Mercurial</li>
+            <li>Experience preparing for extremely high-traffic events</li>
+            <li>
+              Experience installing, using, and maintaining
+              Windows, Mac, and Linux operating systems
+            </li>
+            <li>Experience with network maintenance and penetration testing</li>
+          </ul>
+        </div> <!-- skills -->
+        <div class="section" id="achievements">
+          <h2>Achievements</h2>
+          <ul>
+            <!--<li>
+              Placed 6th of 29 teams at CCSCNE 2010
+              Northeast Regional Programming Contest
+            </li>-->
+            <li>
+              Placed 15th of 52 teams at ACM 2010
+              Greater New York Region Programming Contest
+            </li>
+            <!--<li>
+              Placed 25th of 50 teams at ACM 2011
+              Greater New York Region Programming Contest
+              with a one member handicap
+            </li>-->
+            <li>
+              Led a team of 4 developers over 8 months to
+              create a product customizer that was featured
+              on national television and handled the load
+              without a single error.
+            </li>
+          </ul>
+        </div> <!-- achievements -->
+      </div> <!-- right -->
+      <div class="clear"></div>
+      <div class="section" id="employment">
+        <h2>Employment</h2>
+        <!--
+          I know tables are oft frowned upon in
+          the Web 2.0 Era where CSS does an equal
+          job, but this actually IS a table.
+        -->
+        <table>
+          <tbody>
+            <tr>
+              <td class="has_popup">
+                Clerical Work
+                <div class="popup">
+                  Various tasks in the medical office usually
+                  related to paperwork
+                </div>
+              </td>
+              <td>Joint Industry Board of the Electrical Industry</td>
+              <td>2007-2010</td>
+            </tr>
+            <tr>
+              <td class="has_popup">
+                Ruby Programmer
+                <div class="popup">
+                  Various programming tasks on internal use applications
+                  with a codebase almost entirely in Ruby 1.8 / Rails 2.3
+                </div>
+              </td>
+              <td>Joint Industry Board of the Electrical Industry</td>
+              <td>2010-2011</td>
+            </tr>
+            <tr>
+              <td class="has_popup">
+                Student Tech
+                <div class="popup">
+                  Installing, maintaining, and decommissioning servers,
+                  switches, routers, and other miscellaneous hardware
+                  along with the occasional scripting or data entry work
+                </div>
+              </td>
+              <td>Adelphi University</td>
+              <td>2010-2012</td>
+            </tr>
+            <tr>
+              <td class="has_popup">
+                QA Intern
+                <div class="popup">
+                  Quality Assurance, code maintenance in C# with Unity 3D,
+                  assistance with international localization, and whatever
+                  other odd code was required at the time
+                </div>
+              </td>
+              <td>Brand Games</td>
+              <td>2011</td>
+            </tr>
+            <tr>
+              <td class="has_popup">
+                Developer
+                <div class="popup">
+                  Web development mostly using Ruby on Rails and Wordpress
+                  on various projects, including several for publishing giant
+                  Cond&eacute; Nast. Lead developer for 
+                  <a href="http://www.maydesigns.com/" target="_blank">May Designs</a>,
+                  which has been 
+                  <a href="http://news.yahoo.com/deals-and-steals-under-20-194340940.html"
+                  target="_blank">featured on Good Morning America</a>
+                  three times under my care, and was chosen to be one of 
+                  <a href="http://www.oprah.com/gift/Oprahs-Favorite-Things-2014-Customizable-Notebooks?editors_pick_id=54426"
+                  target="_blank">Oprah's Favorite Things</a> in 2014.
+                </div>
+              </td>
+              <td>Dolphin Micro</td>
+              <td>2012-Present</td>
+            </tr>
+          </tbody>
+        </table>
+      </div> <!-- employment -->
+      <div class="section" id="references">
+        References furnished upon request
+      </div>
+    </div>
+  </body>
+</html>
+
